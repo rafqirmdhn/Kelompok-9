@@ -1,0 +1,7 @@
+-- Query--
+
+SELECT *FROM customer
+SELECT nama_admin FROM admin
+SELECT Email FROM customer
+SELECT first_name, last_name, gender, alamat FROM customer
+SELECT last_name, email FROM customer WHERE alamat = "kopo"
