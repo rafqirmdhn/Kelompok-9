@@ -1,15 +1,5 @@
 
-CREATE TABLE pesawat(
-	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	nama_pesawat VARCHAR(50) NOT NULL,
-	jenis_pesawat VARCHAR(50) NOT NULL
-);
 
-
-CREATE TABLE maskapai(
-	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	nama_maskapai VARCHAR(50) NOT NULL
-);
 
 
 CREATE TABLE customer(
@@ -29,6 +19,18 @@ CREATE TABLE admin(
 	nama_admin VARCHAR(10) NOT NULL
 	);
 
+
+CREATE TABLE pesawat(
+	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nama_pesawat VARCHAR(50) NOT NULL,
+	jenis_pesawat VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE maskapai(
+	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nama_maskapai VARCHAR(50) NOT NULL
+);
 
 CREATE TABLE tiket(
 	kode_tiket INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
