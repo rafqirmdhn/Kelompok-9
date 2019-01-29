@@ -1,4 +1,3 @@
-
 CREATE TABLE pesawat(
 	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	nama_pesawat VARCHAR(50) NOT NULL,
@@ -10,26 +9,6 @@ CREATE TABLE maskapai(
 	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	nama_maskapai VARCHAR(50) NOT NULL
 );
-
-
-CREATE TABLE customer(
-	id_customer INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-	username VARCHAR(20) NOT NULL, 
-	password VARCHAR(20) NOT NULL, 
-	first_name VARCHAR(20) NOT NULL, 
-	last_name VARCHAR(20) NOT NULL,
-	email VARCHAR(20) NOT NULL, 
-	gender CHAR(1) NOT NULl, 
-	no_telp VARCHAR(15) NOT NULL, 
-	alamat VARCHAR(50) NOT NULL 
-	); 
-
-CREATE TABLE admin(
-	id_admin INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-	nama_admin VARCHAR(10) NOT NULL
-	);
-
-
 CREATE TABLE tiket(
 	kode_tiket INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	no_penerbangan varchar(50) NOT NULL,
@@ -40,7 +19,6 @@ CREATE TABLE tiket(
 	kode_pesawat INT NOT NULL,
 	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE
 );
-
 
 CREATE TABLE customer_memesan_tiket(
 	id_customer INT NOT NULL,
@@ -57,15 +35,7 @@ CREATE TABLE customer_memesan_tiket(
 	FOREIGN KEY (kode_maskapai) REFERENCES maskapai(kode_maskapai) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
--- INSERT RECORD
-
-
-INSERT INTO pesawat VALUES(
-	4001,'Boeing',777);
-
-INSERT INTO maskapai VALUES(
-	5001,'Garuda');
-
+-- Insert Record
 
 INSERT INTO customer VALUES(
 	10001, "rifqi123", "12345678", "Rifqi", "Fauzi", "rifqi@gmail.com" "L", "082123456789", "Sawah Besar"
@@ -88,6 +58,14 @@ INSERT INTO admin VALUES(
 	205, "Rafqi Ramadhan"
 	);
 
+INSERT INTO pesawat VALUES(
+	4001,'Boeing',777);
 
+INSERT INTO maskapai VALUES(
+	5001,'Garuda');
+	
+INSERT INTO tiket VALUES(
+	30001, 'GA-JB01', 'firstclass', 'Soekarno Hatta (Jakarta)', 'Ngurah Rai (Bali)', 30000000, 4001);
+	
 INSERT INTO customer_memesan_tiket VALUES(
-	10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
+        10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
