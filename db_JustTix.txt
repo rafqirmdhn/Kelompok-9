@@ -1,3 +1,16 @@
+CREATE TABLE pesawat(
+	kode_pesawat INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nama_pesawat VARCHAR(50) NOT NULL,
+	jenis_pesawat VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE maskapai(
+	kode_maskapai INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nama_maskapai VARCHAR(50) NOT NULL
+);
+
+
 CREATE TABLE customer_memesan_tiket(
 	id_customer INT NOT NULL,
 	kode_tiket INT NOT NULL,
@@ -14,6 +27,12 @@ CREATE TABLE customer_memesan_tiket(
 );
 
 -- INSERT RECORD
+
+INSERT INTO pesawat VALUES(
+	4001,'Boeing',777);
+
+INSERT INTO maskapai VALUES(
+	5001,'Garuda');
 
 INSERT INTO customer_memesan_tiket VALUES(
 	10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
