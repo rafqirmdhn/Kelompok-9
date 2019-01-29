@@ -1,7 +1,3 @@
-
-
-
-
 CREATE TABLE customer(
 	id_customer INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
 	username VARCHAR(20) NOT NULL, 
