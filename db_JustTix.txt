@@ -1,0 +1,19 @@
+CREATE TABLE customer_memesan_tiket(
+	id_customer INT NOT NULL,
+	kode_tiket INT NOT NULL,
+	kode_pesan INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	kode_maskapai INT NOT NULL,
+	nama_pemesan varchar(100) NOT NULL,
+	no_identitas varchar(100) NOT NULL,
+	tgl_penerbangan varchar(100) NOT NULL,
+	waktu_terbang INT NOT NULL,
+	tgl_tiba varchar(100) NOT NULL,
+	FOREIGN KEY (id_customer) REFERENCES customer(id_customer) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (kode_tiket) REFERENCES tiket(kode_tiket) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (kode_maskapai) REFERENCES maskapai(kode_maskapai) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+-- INSERT RECORD
+
+INSERT INTO customer_memesan_tiket VALUES(
+	10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
