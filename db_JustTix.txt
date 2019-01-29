@@ -1,3 +1,14 @@
+CREATE TABLE tiket(
+	kode_tiket INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	no_penerbangan varchar(50) NOT NULL,
+	kelas varchar(100) NOT NULL,
+	asal varchar(100) NOT NULL,
+	tujuan varchar(100) NOT NULL,
+	harga int(100) NOT NULL,
+	kode_pesawat INT NOT NULL,
+	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
 CREATE TABLE customer_memesan_tiket(
 	id_customer INT NOT NULL,
 	kode_tiket INT NOT NULL,
