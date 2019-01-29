@@ -89,7 +89,16 @@ INSERT INTO admin VALUES(
 	204, "Zinedine Zidane"
 	205, "Rafqi Ramadhan"
 	);
-
+	
+INSERT INTO tiket VALUES(
+	30001, 'GA-JB01', 'firstclass', 'Soekarno Hatta (Jakarta)', 'Ngurah Rai (Bali)', 30000000, 4001);
 
 INSERT INTO customer_memesan_tiket VALUES(
 	10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
+
+-- Query--
+1. SELECT *FROM customer
+2. SELECT nama_admin FROM admin
+3. SELECT Email FROM customer
+4. SELECT first_name, last_name, gender, alamat FROM customer
+5. SELECT last_name, email FROM customer WHERE alamat = "kopo"
