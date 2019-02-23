@@ -11,7 +11,7 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="tiket.php"><i class="fa fa-fw"></i>Tiket</a></li>
+                    <li><a href="#"><i class="fa fa-fw"></i>Tiket</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
@@ -19,7 +19,6 @@
                 </ul>
 
                 
-
 
 
             
