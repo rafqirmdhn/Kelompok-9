@@ -1,29 +1,30 @@
 <div id="page-wrapper" style="margin-left: 0; ">
-    	<img src="Pesawat.png" alt="" style="
-                        	position: absolute;
-                        	margin-left: -50px;
-                        	margin-top: -50px;
-                        	width: 1544px;
-                        	">
-    	
+        <img src="Pesawat.png" alt="" style="
+                            position: absolute;
+                            margin-left: -50px;
+                            margin-top: -50px;
+                            width: 1544px;
+                            ">
+        
         <div class="container-fluid">
 
             <div class="row">
                 <div class="col-lg-12" style="padding-top: 185px">
-                    <h2 class="page-header" align="center">Halaman Tiket</h2>
+                    <h2 class="page-header" align="center">Data Pembayaran</h2>
                 </div>
             </div>
 
-            <form style="padding-left: 150px;">
+            <form style="padding-left: 160px;">
                 <div>
                     <label for="date">Tanggal:</label>
                     <input id="date" type="date" value="2019-05-02">
                         <tr>
                             <td>
-                                <input type="radio" name="mem_input" class="radioB" id="radioB" value="Membayar">Membayar</input>
+                                <input type="radio" name="mem_input" class="radioA" id="radioA" value="Membayar">Membayar</input>
 
                                 <input type="radio" name="mem_input" class="radioB" id="radioB" value="cancel">Cancel</input>
                                 
+                                <input type="text" class="search" value="search" style="border-radius: 20px; padding-left: 100px;"></input>
                             </td>
                         </tr>
                         <div class="panel-body" style="width: 1500px">
@@ -46,6 +47,7 @@
                                             <th>Tanggal Penerbangan</th>
                                             <th>Tanggal Tiba</th>
                                             <th>Status Pembayaran</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                         <tr>
                                             
@@ -63,10 +65,93 @@
                                             </td>
                                             <td>23/01/2019</td>
                                             <td>23/01/2019</td>
-                                            <td width="75">
-                                                Berhasil
-                                                <td>Gagal</td>
+                                            <td width="75" style="background-color:#0dd83f">Berhasil
                                             </td>
+                                            <td><input type="button" name="cetak" value="Cetak"></input></td>
+                                        </tr>
+
+                                        <tr>
+                                            
+                                            <td width="100">
+                                                60002
+                                            </td>
+                                            <td width="150">
+                                                Rp 1.800.000
+                                            </td>
+                                            <td>
+                                                100 Menit
+                                            </td>
+                                            <td>
+                                                Jofardo
+                                            </td>
+                                            <td>25/01/2019</td>
+                                            <td>25/01/2019</td>
+                                                <td style="background-color:#ff1616">Gagal</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td width="100">
+                                                60003
+                                            </td>
+                                            <td width="150">
+                                                Rp 30.000.000
+                                            </td>
+                                            <td>
+                                                420 Menit
+                                            </td>
+                                            <td>
+                                                Adriandhy
+                                            </td>
+                                            <td>24/01/2019</td>
+                                            <td>25/01/2019</td>
+                                            <td width="75" style="background-color:#0dd83f">
+                                                Berhasil</td>
+                                            <td><input type="button" name="cetak" value="Cetak"></input>    
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td width="100">
+                                                60004
+                                            </td>
+                                            <td width="150">
+                                                Rp 7.500.000
+                                            </td>
+                                            <td>
+                                                200 Menit
+                                            </td>
+                                            <td>
+                                                Kifahi
+                                            </td>
+                                            <td>26/01/2019</td>
+                                            <td>26/01/2019</td>
+                                            
+                                                <td style="background-color:#ff1616">Gagal
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td width="100">
+                                                60005
+                                            </td>
+                                            <td width="150">
+                                                Rp 800.000
+                                            </td>
+                                            <td>
+                                                60 Menit
+                                            </td>
+                                            <td>
+                                                Fathur
+                                            </td>
+                                            <td>29/01/2019</td>
+                                            <td>29/01/2019</td>
+                                            <td width="75" style="background-color:#0dd83f">
+                                                Berhasil
+                                                
+                                            </td>
+                                            <td><input type="button" name="cetak" value="Cetak"></input>
                                         </tr>
                                         
                                     </thead>
