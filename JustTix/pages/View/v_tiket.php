@@ -21,45 +21,8 @@
                                     </div>
                                     <div style="margin-top: 50px">
                                         <p style="margin-left: 140px" style="font-size: 20px">Hasil Pencarian</p>
-                                        <b style="margin-left: 140px" style="font-size: 20px"> Penerbangan Soekarno Hatta(Jakarta) - Ngurah Rai (Bali) </b>
-                                        <div>
-                                            <select name = "Tanggal" class="dropdownFltr">
-                                            <option value="" selected> Tgl :</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            </select>
-                    
-                                            <select name = "Bulan" class="dropdownFltr">
-                                            <option value="" selected> Bln</option>
-                                            <option value="1">Januari</option>
-                                            <option value="2">Februari</option>
-                                            <option value="3">Maret</option>
-                                            <option value="4">April</option>
-                                            <option value="5">Mei</option>
-                                            <option value="6">Juni</option>
-                                            <option value="7">Juli</option>
-                                            <option value="8">Agustus</option>
-                                            <option value="9">September</option>
-                                            <option value="10">Oktober</option>
-                                            <option value="11">November</option>
-                                            <option value="12">Desember</option>
-                                            </select>
-
-                                            <select name = "Tahun" class="dropdownFltr">
-                                            <option value="" selected> Tahun :</option>
-                                            <option value="19">2019</option>
-                                            <option value="20">2020</option>
-                                            <option value="21">2021</option>
-                                            </select>
-                                        </div>
-                                        <form action="">
-                                            <input type="radio" name="pesan" value="pesan"> Memesan<br>
-                                            <input type="radio" name="pesan" value="cancel"> Cancel<br>
-                                        </form>
-                                        
-                                        <?php include($_SERVER['DOCUMENT_ROOT']."/justtix2/pages/Controller/tiketController.php"); ?>
-                                        
+                                    	<b style="margin-left: 140px" style="font-size: 20px"> Penerbangan Soekarno Hatta(Jakarta) - Ngurah Rai (Bali) </b>
+                                        <p style="margin-left: 140px">Minggu, 10 Februari </p>
                                         <table id="tikettable" style="width:900px; overflow-x: hidden">
                                             <thead>
                                                 <tr>
@@ -161,7 +124,6 @@
                 });
             });
         </script>
-        
 
     </body>
 </html>
