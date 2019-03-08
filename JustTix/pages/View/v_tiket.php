@@ -53,10 +53,12 @@
                                             <option value="21">2021</option>
                                             </select>
                                         </div>
-                                        <form class="radioPesan" action="">
+                                        <form action="">
                                             <input type="radio" name="pesan" value="pesan"> Memesan<br>
                                             <input type="radio" name="pesan" value="cancel"> Cancel<br>
                                         </form>
+                                        
+                                        <?php include($_SERVER['DOCUMENT_ROOT']."/justtix2/pages/Controller/tiketController.php"); ?>
                                         
                                         <table id="tikettable" style="width:900px; overflow-x: hidden">
                                             <thead>
@@ -159,6 +161,7 @@
                 });
             });
         </script>
+        
 
     </body>
 </html>
