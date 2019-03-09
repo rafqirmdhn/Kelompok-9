@@ -1,5 +1,5 @@
 <div id="page-wrapper" style="margin-left: 0; ">
-        <img src="Pesawat.png" alt="" style="
+        <img src="../Gambar/Pesawat.png" alt="" style="
                             position: absolute;
                             margin-left: -50px;
                             margin-top: -50px;

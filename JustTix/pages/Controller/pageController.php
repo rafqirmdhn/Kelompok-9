@@ -20,11 +20,6 @@
 			include ("view/v_header.php");
 			include ("view/v_pembayaran.php");
 		}
-		public function searchtiket(){
-			include ('View/v_head.php');
-			include ('View/v_header-user.php');
-			include ('View/v_tiket-search.php');
-		}
 
 	}
 	
