@@ -20,68 +20,12 @@
                                         </div>
                                     </div>
                                     <div style="margin-top: 50px">
-                                        <p style="margin-left: 140px" style="font-size: 20px">Hasil Pencarian</p>
-                                    	<b style="margin-left: 140px" style="font-size: 20px"> Penerbangan Soekarno Hatta(Jakarta) - Ngurah Rai (Bali) </b>
-                                        <p style="margin-left: 140px">Minggu, 10 Februari </p>
-                                        <table id="tikettable" style="width:900px; overflow-x: hidden">
-                                            <thead>
-                                                <tr>
-                                                    <th>Pesawat</th>
-                                                    <th>Kelas Penerbangan</th>
-                                                    <th>Asal</th>
-                                                    <th>Tujuan</th>
-                                                    <th>Jam Terbang</th>
-                                                    <th>Jam Tiba</th>
-                                                    <th>Harga</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="odd gradeX">
-                                                    <td>Garuda Indonesia</td>
-                                                    <td>First Class</td>
-                                                    <td>Soekarno Hatta (Jakarta)</td>
-                                                    <td>Ngurah Rai (Bali)</td>
-                                                    <td>14.00</td>
-                                                    <td>16.00</td>
-                                                    <td>30.000.000
-                                                        <button type="button" class="btn-pil">Pilih</button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>Lion Air</td>
-                                                    <td>Ekonomi</td>
-                                                    <td>Soekarno Hatta (Jakarta)</td>
-                                                    <td>Ngurah Rai (Bali)</td>
-                                                    <td>07.30</td>
-                                                    <td>09.00</td>
-                                                    <td>800.000
-                                                        <button type="button" class="btn-pil">Pilih</button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>Garuda Indonesia</td>
-                                                    <td>Bisnis</td>
-                                                    <td>Soekarno Hatta (Jakarta)</td>
-                                                    <td>Ngurah Rai (Bali)</td>
-                                                    <td>19.00</td>
-                                                    <td>21.00</td>
-                                                    <td>10.000.000
-                                                        <button type="button" class="btn-pil">Pilih</button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>Garuda Indonesia</td>
-                                                    <td>Ekonomi</td>
-                                                    <td>Soekarno Hatta (Jakarta)</td>
-                                                    <td>Ngurah Rai (Bali)</td>
-                                                    <td>15.30</td>
-                                                    <td>17.00</td>
-                                                    <td>1.500.000
-                                                        <button type="button" class="btn-pil">Pilih</button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        
+                                        
+                                        
+                                        <?php include("Controller/tiketController.php"); ?>
+                                        
+                                        
                                     </div>
                                     <!-- /.table-responsive -->
                                     
@@ -124,6 +68,7 @@
                 });
             });
         </script>
+        
 
     </body>
 </html>

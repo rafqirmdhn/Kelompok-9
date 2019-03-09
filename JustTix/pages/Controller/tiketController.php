@@ -1,45 +1,35 @@
 <?php
-echo '<table id="tikettable" style="width:900px; overflow-x: hidden">';
-echo "<tr><th>No Penerbangan</th><th>Kelas</th><th>Asal</th><th>Tujuan</th><th>Harga</th></tr>";
+include("connect.php");
 
-class TableRows extends RecursiveIteratorIterator { 
-    function __construct($it) { 
-        parent::__construct($it, self::LEAVES_ONLY); 
-    }
-
-    function current() {
-        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
-    }
-
-    function beginChildren() { 
-        echo "<tr>"; 
-    } 
-
-    function endChildren() { 
-        echo "</tr>" . "\n";
-    } 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 } 
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "impal_test";
+if (isset($_POST["submit"])) {
+    $asal = $_POST["asal"];
+    $tujuan = $_POST["tujuan"];
+    $kelas = $_POST["kelas"];
+    $tanggal = $_POST["tanggal"];
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT no_penerbangan, kelas, asal, tujuan, harga FROM tiket WHERE asal = 'Soekarno Hatta (Jakarta)'"); 
-    $stmt->execute();
+    $sql = "SELECT kode_tiket, nama_maskapai, kelas, asal, tujuan, harga FROM tiket JOIN maskapai USING (kode_maskapai) WHERE asal ='$asal' AND tujuan = '$tujuan' AND kelas = '$kelas' ";
 
-    // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-        echo $v;
+    $result = mysqli_query($conn, $sql);
+
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "<b style='margin-left: 140px' style='font-size: 20px'> Hasil Pencarian Penerbangan ".$asal." ke ".$tujuan."</b><br>" ;
+        echo "<form action = '' method = 'post'> <table class = 'table table-striped table-bordered table-hover dataTable no-footer' style= 'text-align: center; margin-top: 20px'>";
+        echo "<tr><th>Maskapai</th><th>Kelas</th><th>Asal</th><th>Tujuan</th><th>Harga</th></tr>";
+
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>"."<td style='display:none;'>".$row["kode_tiket"]."</td>"."<td>".$row["nama_maskapai"]."</td>"."<td>".$row["kelas"]."</td>"."<td>".$row["asal"]."</td>"."<td>".$row["tujuan"]."</td>"."<td>".$row["harga"]."<a type='submit' name='pilih' class='btn btn-primary' href='DataDiri.php?id=".$row["kode_tiket"]."' readonly>Pilih</a> " ."</td>"."</tr>";
+            
+        }
+        echo "</table></form>";
+    } else {
+        echo "0 results";
     }
 }
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-$conn = null;
-echo "</table>";
+
 ?>
