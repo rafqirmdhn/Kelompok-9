@@ -18,19 +18,15 @@
 			<div class="row">
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "impal";
-
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$con = mysqli_connect('localhost','root','','db_tiketpesawat');
+
 // Check connection
-if (!$conn) {
+if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-//$sql = "SELECT * FROM produk join toko JOIN kategori_produk JOIN kategori ON produk.ID_toko=toko.ID_toko AND produk.id_produk = kategori_produk.ID_Produk AND kategori_produk.ID_Kategori = kategori.ID_Kategori";
+
 $sql1 = "SELECT DISTINCT asal FROM tiket";
 $sql2 = "SELECT DISTINCT tujuan FROM tiket";
 $sql3 = "SELECT DISTINCT kelas FROM tiket";
@@ -95,7 +91,7 @@ if (mysqli_num_rows($result1) OR mysqli_num_rows($result2) OR mysqli_num_rows($r
     echo "0 results";
 }
 
-mysqli_close($conn);
+mysqli_close($con);
 ?>
 			</div>
 					
