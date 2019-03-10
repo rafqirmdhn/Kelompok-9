@@ -37,7 +37,7 @@ CREATE TABLE tiket(
 	harga int(100) NOT NULL,
 	kode_pesawat INT NOT NULL,
 	kode_maskapai INT NOT NULL,
-	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE
+	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (kode_maskapai) REFERENCES maskapai(kode_maskapai) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -79,13 +79,13 @@ INSERT INTO customer VALUES
  (10009, "ficocacola", "seveneleven", "Fico", "Fachriza", "fico@gmail.com", "L", "087862489531","Kopo"),
  (10010, "alphisugoi", "twitterbapuk", "Alphiandi", "Sugoi", "sugoi@gmail.com", "L", "08771597328","Kopo");
 
-INSERT INTO admin VALUES(
-	201, "Luther Hariyanto"
-	202, "Manuel Leleuly"
-	203, "Indriana Fadillah"
-	204, "Zinedine Zidane"
-	205, "Rafqi Ramadhan"
-	);
+INSERT INTO admin VALUES
+	(201, "Luther Hariyanto"),
+	(202, "Manuel Leleuly"),
+	(203, "Indriana Fadillah"),
+	(204, "Zinedine Zidane"),
+	(205, "Rafqi Ramadhan")
+	;
 	
 INSERT INTO tiket VALUES(
 	30001, 'GA-JB01', 'firstclass', 'Soekarno Hatta (Jakarta)', 'Ngurah Rai (Bali)', 30000000, 4001, 5001);
