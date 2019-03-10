@@ -3,7 +3,7 @@
 		public function user(){
 			include ('View/v_head.php');
 			include ('View/v_header-user.php');
-			include('View/v_TEMPLATE-user.php');
+			include('View/v_templateUser.php');
 		}
 		public function dataDiri(){
 			include("View/v_head.php");
