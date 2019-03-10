@@ -21,6 +21,7 @@
                                     </div>
                                     <div style="margin-top: 50px">
                                         <?php 
+                                            include('Controller/tiketController.php');
                                             $dataTiket = new tiketController();
                                             $dataTiket->tampilDataTiket();
                                         ?>
