@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="template-user.php">JustTix</a>
+                    <a class="navbar-brand" href="templateUser.php">JustTix</a>
                 </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,7 +11,7 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="search-tiket.php"><i class="fa fa-fw"></i>Tiket</a></li>
+                    <li><a href="templateUser.php"><i class="fa fa-fw"></i>Beranda</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
