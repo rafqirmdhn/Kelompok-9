@@ -1,6 +1,5 @@
 <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	/**
 	 * 
 	 */
@@ -20,7 +19,7 @@
 	}
 =======
 =======
->>>>>>> 6726258c6dcda8bf66cdbcd3b61e0725cc3578a6
+>>>>>>> 
 		include("connect.php");
 
 		if ($conn->connect_error) {
@@ -55,7 +54,5 @@
 		}
 
 		<<<<<<< HEAD
-		>>>>>>> 6726258c6dcda8bf66cdbcd3b61e0725cc3578a6
-		=======
-		>>>>>>> 6726258c6dcda8bf66cdbcd3b61e0725cc3578a6
+		
 ?>
