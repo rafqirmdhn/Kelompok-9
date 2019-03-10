@@ -27,7 +27,6 @@
                                         ?>
                                     </div>
                                     <!-- /.table-responsive -->
-                                    
                                 </div>
                                 <!-- /.panel-body -->
                             </div>

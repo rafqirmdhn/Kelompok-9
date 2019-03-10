@@ -48,7 +48,7 @@
 		public function tampilDataTiket(){
 			include("connect.php");
 			if (isset($_POST["submit"])) {
-				$result = selectTabelTiket();
+				$result = $this->selectTabelTiket();
 				if (mysqli_num_rows($result) > 0) {
 					printDataTiket($result);
 				} else {
