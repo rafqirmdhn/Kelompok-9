@@ -20,12 +20,10 @@
                                         </div>
                                     </div>
                                     <div style="margin-top: 50px">
-                                        
-                                        
-                                        
-                                        <?php include("Controller/tiketController.php"); ?>
-                                        
-                                        
+                                        <?php 
+                                            $dataTiket = new tiketController();
+                                            $dataTiket->tampilDataTiket();
+                                        ?>
                                     </div>
                                     <!-- /.table-responsive -->
                                     
