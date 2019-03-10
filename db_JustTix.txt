@@ -40,7 +40,9 @@ CREATE TABLE tiket(
 	tujuan varchar(100) NOT NULL,
 	harga int(100) NOT NULL,
 	kode_pesawat INT NOT NULL,
-	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE
+	kode_maskapai INT NOT NULL,
+	FOREIGN KEY(kode_pesawat) REFERENCES pesawat(kode_pesawat) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY(kode_maskapai) REFERENCES maskapai(kode_maskapai) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
