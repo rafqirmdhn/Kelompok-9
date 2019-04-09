@@ -92,7 +92,7 @@ INSERT INTO admin VALUES
 INSERT INTO tiket VALUES(
 	30001, 'GA-JB01', 'firstclass', 'Soekarno Hatta (Jakarta)', 'Ngurah Rai (Bali)', 30000000, 4001, 5001);
 
-INSERT INTO pesanan VALUES(
+INSERT INTO customer_memesan_tiket VALUES(
 	10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
 
 -- Query--
