@@ -19,28 +19,33 @@
 
                                         </div>
                                     </div>
+									<form action="rekap.php" method="post">
                                     <div style="margin-top: 50px">
-										<label>Filter</label>
-										<select class="form-control" id="form-300" placeholder="bulan">
-											<option value="januari">Januari</option>
-											<option value="februari">Februari</option>
-											<option value="maret">Maret</option>
-											<option value="april">April</option>
-											<option value="mei">Mei</option>
-											<option value="juni">Juni</option>
-											<option value="juli">Juli</option>
-											<option value="agustus">Agustus</option>
-											<option value="september">September</option>
-											<option value="oktober">Oktober</option>
-											<option value="november">November</option>
-											<option value="desember">Desember</option>
+										<label>Filter bulan penerbangan</label>
+										<select class="form-control" id="form-300" placeholder="bulan" name="bulan">
+											<option value='01'>Januari</option>
+											<option value='02'>Februari</option>
+											<option value='03'>Maret</option>
+											<option value='04'>April</option>
+											<option value='05'>Mei</option>
+											<option value='06'>Juni</option>
+											<option value='07'>Juli</option>
+											<option value='08'>Agustus</option>
+											<option value='09'>September</option>
+											<option value='10'>Oktober</option>
+											<option value='11'>November</option>
+											<option value='12'>Desember</option>
 										</select>
-                                        <?php 
+										<div style="margin-left=20px">
+											<input id="submit" type="submit" name="submit" class="btn btn-primary btn-lg" value="Apply" data-toggle="modal" data-target="#myModal"/>
+                                        </div>
+										<?php 
                                             include_once('Controller/rekapController.php');
                                             $dataTiket = new rekapController();
                                             $dataTiket->tampilDataRekap();
                                         ?>
                                     </div>
+									</form>
                                     <!-- /.table-responsive -->
                                 </div>
                                 <!-- /.panel-body -->

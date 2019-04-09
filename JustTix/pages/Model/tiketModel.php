@@ -19,6 +19,16 @@
 			return $result;
 		}
 		public function selectTabelRekap(){
+			if(isset($_POST["submit"])){
+				$bulan = $_POST["bulan"];
+				$sql = "SELECT * FROM customer_memesan_tiket 
+						JOIN tiket USING (kode_tiket)
+						JOIN maskapai ON (customer_memesan_tiket.kode_maskapai = maskapai.kode_maskapai)
+						WHERE tgl_penerbangan like '%/$bulan/%'";
+				$result = mysqli_query($this->con,$sql);
+				#$data = mysqli_fetch_array($result);
+				return $result;
+			}
 			$sql = "SELECT * FROM customer_memesan_tiket 
 					JOIN tiket USING (kode_tiket)
 					JOIN maskapai ON (customer_memesan_tiket.kode_maskapai = maskapai.kode_maskapai)";
