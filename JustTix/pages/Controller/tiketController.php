@@ -1,20 +1,13 @@
 <?php
+	include_once('Model/tiketModel.php');
 	class tiketController{
-		public function selectTabelTiket(){
-			$asal = $_POST["asal"];
-			$tujuan = $_POST["tujuan"];
-			$kelas = $_POST["kelas"];
-			$tanggal = $_POST["tanggal"];
-
-			$sql = "SELECT kode_tiket, nama_maskapai, kelas, asal, tujuan, harga 
-					FROM tiket 
-					JOIN maskapai USING (kode_maskapai) 
-					WHERE asal ='$asal' AND tujuan = '$tujuan' AND kelas = '$kelas' ";
-			return mysqli_query($con,$sql);
+		public function selectTabelTiket($data){
+			$tiket = new tiketModel();
+			return $tiket->selectTabelTiket($data);
 		}
-		public function printDataTiket($result){
+		public function printDataTiket($data,$result){
 			echo "	<b style='margin-left: 140px' style='font-size: 20px'> 
-						Hasil Pencarian Penerbangan '$asal' ke '$tujuan'
+						Hasil Pencarian Penerbangan ".$data['asal']." ke ".$data['$tujuan']."
 					</b><br> 
 					<form action = '' method = 'post'> 
 						<table class = 'table table-striped table-bordered table-hover dataTable no-footer' style= 'text-align: center; margin-top: 20px'>
@@ -46,14 +39,20 @@
 					</form>";
 		}
 		public function tampilDataTiket(){
-			include("connect.php");
-			if (isset($_POST["submit"])) {
-				$result = $this->selectTabelTiket();
+			if(isset($_POST["submit"])){
+				$dataTiketMuncul = array(
+				'asal' => $_POST['asal'],
+				'tujuan' => $_POST['tujuan'],
+				'kelas' => $_POST['kelas'],
+				'tanggal' => $_POST['tanggal'],
+				);
+				$result = $this->selectTabelTiket($dataTiketMuncul);
 				if (mysqli_num_rows($result) > 0) {
-					printDataTiket($result);
+					printDataTiket($dataTiketMuncul,$result);
 				} else {
 					echo "0 results";
 				}
 			}
-
+		}
+	}
 ?>

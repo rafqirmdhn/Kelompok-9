@@ -14,16 +14,31 @@
                                     
                                     <div class="table-responsive" style=" overflow-x: hidden;">
                                         <div class="headline" style="width:1369px; height: 250px">
-                                            <img src="../Gambar/pesawat.png" alt="" style="position: absolute; margin-left: -50px; margin-top: -50px; width:1369px;"> 
+                                            <img src="../Gambar/pesawat.png" alt="" style="position: absolute; margin-left: -50px; margin-top: -50px; width:1369px; max-width=100; max-height=auto"> 
                                             <h2 style="z-index: 0 margin-left:50px;position: absolute; text-align: right;left: 600px;top: 100px;color: white; font-size: 50px">JustTix</h2>
 
                                         </div>
                                     </div>
                                     <div style="margin-top: 50px">
+										<label>Filter</label>
+										<select class="form-control" id="form-300" placeholder="bulan">
+											<option value="januari">Januari</option>
+											<option value="februari">Februari</option>
+											<option value="maret">Maret</option>
+											<option value="april">April</option>
+											<option value="mei">Mei</option>
+											<option value="juni">Juni</option>
+											<option value="juli">Juli</option>
+											<option value="agustus">Agustus</option>
+											<option value="september">September</option>
+											<option value="oktober">Oktober</option>
+											<option value="november">November</option>
+											<option value="desember">Desember</option>
+										</select>
                                         <?php 
-                                            include_once('Controller/tiketController.php');
-                                            $dataTiket = new tiketController();
-                                            $dataTiket->tampilDataTiket();
+                                            include_once('Controller/rekapController.php');
+                                            $dataTiket = new rekapController();
+                                            $dataTiket->tampilDataRekap();
                                         ?>
                                     </div>
                                     <!-- /.table-responsive -->

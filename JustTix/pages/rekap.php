@@ -1,5 +1,5 @@
 <?php
 	include_once("Controller/pageController.php");
-	$tiket = new pageController();
-	$tiket->tiket();
+	$rekap = new pageController();
+	$rekap->rekap();
 ?>
