@@ -1,13 +1,13 @@
 CREATE TABLE customer(
 	id_customer INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-	username VARCHAR(20) NOT NULL, 
-	password VARCHAR(20) NOT NULL, 
-	first_name VARCHAR(20) NOT NULL, 
-	last_name VARCHAR(20) NOT NULL,
-	email VARCHAR(20) NOT NULL, 
+	username VARCHAR(100) NOT NULL, 
+	password VARCHAR(100) NOT NULL, 
+	first_name VARCHAR(100) NOT NULL, 
+	last_name VARCHAR(100) NOT NULL,
+	email VARCHAR(100) NOT NULL, 
 	gender CHAR(1) NOT NULl, 
 	no_telp VARCHAR(15) NOT NULL, 
-	alamat VARCHAR(50) NOT NULL
+	alamat VARCHAR(100) NOT NULL
 ); 
 
 CREATE TABLE admin(
