@@ -7,13 +7,16 @@ CREATE TABLE customer(
 	email VARCHAR(20) NOT NULL, 
 	gender CHAR(1) NOT NULl, 
 	no_telp VARCHAR(15) NOT NULL, 
-	alamat VARCHAR(50) NOT NULL 
-	); 
+	alamat VARCHAR(50) NOT NULL,
+); 
 
 CREATE TABLE admin(
 	id_admin INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-	nama_admin VARCHAR(10) NOT NULL
-	);
+	nama_admin VARCHAR(10) NOT NULL,
+	email_admin VARCHAR(100) NOT NULL,
+	user_admin VARCHAR(100) NOT NULL,
+	pass_admin VARCHAR(100) NOT NULL
+);
 
 
 CREATE TABLE pesawat(
@@ -42,7 +45,7 @@ CREATE TABLE tiket(
 );
 
 
-CREATE TABLE pesanan(
+CREATE TABLE customer_memesan_tiket(
 	id_customer INT NOT NULL,
 	kode_tiket INT NOT NULL,
 	kode_pesan INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -80,18 +83,17 @@ INSERT INTO customer VALUES
  (10010, "alphisugoi", "twitterbapuk", "Alphiandi", "Sugoi", "sugoi@gmail.com", "L", "08771597328","Kopo");
 
 INSERT INTO admin VALUES
-	(201, "Luther Hariyanto"),
-	(202, "Manuel Leleuly"),
-	(203, "Indriana Fadillah"),
-	(204, "Zinedine Zidane"),
-	(205, "Rafqi Ramadhan")
-	;
+	(201, "Luther Hariyanto", "luther@gmail.com", "luther", "luther"),
+	(202, "Manuel Leleuly", "manuel@gmail.com", "manuel", "manuel"),
+	(203, "Indriana Fadillah", "indriana@gmail.com", "indri", "indri"),
+	(204, "Zinedine Zidane", "zidane@gmail.com", "zidane", "mamat"),
+	(205, "Rafqi Ramadhan", "rafqi@gmail.com", "rafqi", "rafqi");
 	
 INSERT INTO tiket VALUES(
 	30001, 'GA-JB01', 'firstclass', 'Soekarno Hatta (Jakarta)', 'Ngurah Rai (Bali)', 30000000, 4001, 5001);
 
 INSERT INTO pesanan VALUES(
-	60001, 10001, 30001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
+	10001, 30001, 60001, 5001, "Rifqi", "3271040104980010", "23/01/2019", "150", "23/01/2019");
 
 -- Query--
 1. SELECT *FROM customer
