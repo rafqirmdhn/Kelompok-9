@@ -25,29 +25,36 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form role="form">
+                                            <form role="form" action="Pembayaran.php" method="post">
                                                 <div class="form-group">
                                                     <label>Nama</label>
-                                                    <input class="form-control" placeholder="Enter text">
+                                                    <input class="form-control" name = "nama_pemesan" placeholder="Masukan Nama Customer ">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Tanggal Lahir</label>
-                                                    <input class="form-control" placeholder="Enter text">
+                                                    <input class="form-control" name = "tanggal_lahir" placeholder="Masukan Tanggal Lahir Customer">
                                                 </div>
                                                 
                                                 <div class="form-group">
                                                     <label>Nomor Telpon</label>
-                                                    <input class="form-control" placeholder="Enter text">
+                                                    <input class="form-control" name = "nomor_telpon" placeholder="Masukan Nomor Telpon Customer">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nomor KTP</label>
-                                                    <input class="form-control" placeholder="Enter text">
+                                                    <input class="form-control" nama = "nomor_identitas" placeholder="Masukan Nomor Identitas Customer">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Email</label>
-                                                    <input class="form-control" placeholder="Enter text">
+                                                    <input type="email" class="form-control" nama = "email" placeholder="Masukan Email Customer">
                                                 </div>
-                                                
+                                                <div class="form-group">
+                                                    
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox">Pengisian sesuai data diri
+                                                        </label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
                                                 
                                             
                                                 
@@ -57,24 +64,7 @@
                                             </form>
                                         </div>
                                         <!-- /.col-lg-6 (nested) -->
-                                        <div class="col-lg-6">
-                                            
-                                            <form role="form">
-                                                <fieldset disabled>
-                                                    <div class="form-group">
-                                                    
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox">Pengisian sesuai data diri
-                                                        </label>
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
-                                                </fieldset>
-                                            </form>
-                                            
-                                            
-                                            </form>
-                                        </div>
+                                        
                                         <!-- /.col-lg-6 (nested) -->
                                     </div>
                                     <!-- /.row (nested) -->
