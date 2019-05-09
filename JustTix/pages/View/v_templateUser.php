@@ -13,11 +13,13 @@
                 </div>
             </div>					
 					
-
-
 			<div class="row">
 
-				<?php include("Controller/templateUserController.php"); ?>
+				<?php 
+					include_once("Controller/templateUserController.php"); 
+					$pencarian = new templateUserController();
+					$pencarian->pencarianPenerbangan();
+				?>
 
 			</div>
 					

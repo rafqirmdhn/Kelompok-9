@@ -17,23 +17,23 @@
 		<img src="../Gambar/icon-login2.png" class="avatar">
 		<h1>Sign In</h1>
 		<form action="#" method='post'>
-			<p>Email</p>
-			<input type="email" name="email" placeholder="Email" required>
-			<p>Password</p>
-			<input type="password" name="password" placeholder="Password" required>
-			<p>Retype Password</p>
-			<input type="password" name="repass" placeholder="Re-Password" required>
-			<p>Username</p>
-			<input type="text" name="username" placeholder="Username" required>
+			<p>First Name</p>
+			<input type="text" name="first-name" placeholder="First Name" required>
+			<p>Last Name</p>
+			<input type="text" name="last-name" placeholder="Last Name" required>
+			<p>Alamat</p>
+			<input type="text" name="alamat" placeholder="Alamat" required>
+			<p>Nomor Telepon</p>
+			<input type="text" name="notelp" placeholder="Nomor Telepon" required>
 			<input type="submit" name="submit" value="Sign In">
-			<a href="login2.php">Already have an account?</a>
 		</form>
 	</div>
 	<div>
 		<?php
+			session_start();
 			include_once('Controller/loginController.php');
 			$login = new loginController();
-			$login->registrasiLanjut();
+			$login->signup($_SESSION['email'],$_SESSION['password'],$_SESSION['username']);
 		?>
 	</div>
 </body>

@@ -1,6 +1,6 @@
 <?php 
 	class pageController{
-		public function user(){
+		public function user($username){
 			include ('View/v_head.php');
 			include ('View/v_headerUser.php');
 			include('View/v_templateUser.php');

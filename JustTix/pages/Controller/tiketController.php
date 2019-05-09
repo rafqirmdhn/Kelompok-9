@@ -7,7 +7,7 @@
 		}
 		public function printDataTiket($data,$result){
 			echo "	<b style='margin-left: 140px' style='font-size: 20px'> 
-						Hasil Pencarian Penerbangan ".$data['asal']." ke ".$data['$tujuan']."
+						Hasil Pencarian Penerbangan ".$data['asal']." ke ".$data['tujuan']."
 					</b><br> 
 					<form action = '' method = 'post'> 
 						<table class = 'table table-striped table-bordered table-hover dataTable no-footer' style= 'text-align: center; margin-top: 20px'>
@@ -48,7 +48,7 @@
 				);
 				$result = $this->selectTabelTiket($dataTiketMuncul);
 				if (mysqli_num_rows($result) > 0) {
-					printDataTiket($dataTiketMuncul,$result);
+					$this->printDataTiket($dataTiketMuncul,$result);
 				} else {
 					echo "0 results";
 				}

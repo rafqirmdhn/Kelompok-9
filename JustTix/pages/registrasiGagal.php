@@ -17,8 +17,9 @@
 		<img src="../Gambar/icon-login2.png" class="avatar">
 		<h1>Sign In</h1>
 		<form action="#" method='post'>
+			<p>Email/Username sudah terpakai</p>
 			<p>Email</p>
-			<input type="email" name="email" placeholder="Email" required>
+			<input type="text" name="email" placeholder="Email" required>
 			<p>Password</p>
 			<input type="password" name="password" placeholder="Password" required>
 			<p>Retype Password</p>

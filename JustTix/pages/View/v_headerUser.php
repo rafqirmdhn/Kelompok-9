@@ -94,13 +94,33 @@
                 <ul class="nav navbar-right navbar-top-links">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> <b class="caret"></b>
+							<?php
+								if($username!=""){
+									echo '<i class="fa fa-user fa-fw"></i>'.$username.' <b class="caret"></b>';
+								}
+								else{
+									echo '<i class="fa fa-user fa-fw"></i>'.$username.' <b class="caret"></b>';
+								}
+							?>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="Registrasi2.php"><i class="fa fa-user fa-fw"></i> Registrasi</a>
                             </li>
-                            <li><a href="login2.php"><i class="fa fa-sign-in fa-fw"></i> Login</a>
-                            </li>
+							<?php
+								if($username!=""){
+									echo '<li><a href="logout.php" name="submit"><i class="fa fa-sign-in fa-fw"></i> Logout</a>
+											</li>';
+								}
+								else{
+									echo '<li><a href="login2.php"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+											</li>';
+								}
+								if(isset($_POST['submit'])){
+									include_once('Controller/loginController.php');
+									$login = new loginController();
+									#$login->logout();
+								}
+							?>
                         </ul>
                     </li>
                 </ul>

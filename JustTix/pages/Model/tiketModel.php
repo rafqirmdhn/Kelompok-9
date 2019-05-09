@@ -15,7 +15,7 @@
 					FROM tiket 
 					JOIN maskapai USING (kode_maskapai) 
 					WHERE asal ='$asal' AND tujuan = '$tujuan' AND kelas = '$kelas' ";
-			$result = mysqli_query($con,$sql);
+			$result = mysqli_query($this->con,$sql);
 			return $result;
 		}
 		public function selectTabelRekap(){
@@ -36,6 +36,9 @@
 			#$data = mysqli_fetch_array($result);
 			return $result;
 		}
-		
+		public function ambilData($data){
+			$sql = "SELECT DISTINCT ".$data." FROM tiket";
+			return mysqli_query($this->con,$sql);
+		}
 	}
 ?>

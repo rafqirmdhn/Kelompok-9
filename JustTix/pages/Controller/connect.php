@@ -1,6 +1,8 @@
 <?php
-	$con = mysqli_connect('localhost','root','','db_tiketpesawat');
-	if ($con->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
+	class connect{
+		public function connect(){
+			$connection = mysqli_connect('localhost','root','','db_justtix');
+			return $connection;
+		}
+	}
 ?>
