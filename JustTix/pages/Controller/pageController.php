@@ -10,9 +10,9 @@
 			include("View/v_header.php");
 			include("View/v_DataDiri.php");
 		}
-		public function tiket(){
+		public function tiket($username){
 			include("View/v_head.php");
-			include("View/v_header.php");
+			include("View/v_headerUser.php");
 			include("View/v_tiket.php");
 		}
 		public function pembayaran(){

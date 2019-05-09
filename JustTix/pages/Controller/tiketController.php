@@ -5,7 +5,7 @@
 			$tiket = new tiketModel();
 			return $tiket->selectTabelTiket($data);
 		}
-		public function printDataTiket($data,$result){
+		public function printDataTiket($data,$result,$username){
 			echo "	<b style='margin-left: 140px' style='font-size: 20px'> 
 						Hasil Pencarian Penerbangan ".$data['asal']." ke ".$data['tujuan']."
 					</b><br> 
@@ -28,17 +28,19 @@
 						<td>".$row["asal"]."</td>
 						<td>".$row["tujuan"]."</td>
 						<td>".$row["harga"]."</td>
-						<td> 
-							<a type='submit' name='pilih' class='btn btn-primary' href='DataDiri.php?id=".$row["kode_tiket"]."' readonly>
+						<td>";
+					if($username!=""){
+						echo "<a type='submit' name='pilih' class='btn btn-primary' href='DataDiri.php?id=".$row["kode_tiket"]."' readonly>
 								Pilih
-							</a>
-						</td>
+							</a>";
+					}
+				echo	"</td>
 					</tr>";				
 			}
 			echo "		</table>
 					</form>";
 		}
-		public function tampilDataTiket(){
+		public function tampilDataTiket($username){
 			if(isset($_POST["submit"])){
 				$dataTiketMuncul = array(
 				'asal' => $_POST['asal'],
@@ -48,7 +50,7 @@
 				);
 				$result = $this->selectTabelTiket($dataTiketMuncul);
 				if (mysqli_num_rows($result) > 0) {
-					$this->printDataTiket($dataTiketMuncul,$result);
+					$this->printDataTiket($dataTiketMuncul,$result,$username);
 				} else {
 					echo "0 results";
 				}
