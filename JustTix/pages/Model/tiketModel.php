@@ -40,5 +40,21 @@
 			$sql = "SELECT DISTINCT ".$data." FROM tiket";
 			return mysqli_query($this->con,$sql);
 		}
+		public function tampilTabelUpdate(){
+			$sql = "SELECT kode_tiket, no_penerbangan, kelas, asal, tujuan, tgl_terbang, tgl_tiba, harga FROM tiket";
+			$result = mysqli_query($this->con,$sql);
+			return $result;
+		}
+		public function edit($data){
+			$sql = "SELECT kode_tiket, no_penerbangan, kelas, asal, tujuan, harga FROM tiket where kode_tiket = $data";
+			while($d = mysql_fetch_array($data)){
+				$hasil[] = $d;
+			}
+			return $hasil;
+		}
+		public function update($id)
+			{
+				mysql_query("update tiket set kode_tiket='$kode_tiket', no_penerbangan='$no_penerbangan', kelas='$kelas', asal=$asal, tujuan=$tujuan, harga=$harga where id='$kode_tiket'");
+			}	
 	}
 ?>

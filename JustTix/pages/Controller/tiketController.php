@@ -56,5 +56,38 @@
 				}
 			}
 		}
+
+		public function tampilTabelUpdate(){
+		include_once('Model/tiketModel.php');
+		$tiket = new tiketModel();
+		$result = $tiket->tampilTabelUpdate();
+			while($row = mysqli_fetch_assoc($result)) {
+				echo "<tr> 
+					<td>".$row["kode_tiket"]."</td>
+						<td>".$row["no_penerbangan"]."</td>
+						<td>".$row["kelas"]."</td>
+						<td>".$row["asal"]."</td>
+						<td>".$row["tujuan"]."</td>
+						<td>".$row["tgl_terbang"]."</td>
+						<td>".$row["tgl_tiba"]."</td>
+						<td>Rp ".number_format($row["harga"])."</td>
+						<td><button type='button' class='update'> <a href='updateTiket.php?id=".$row["kode_tiket"]."'>Update</button></td>
+					</tr>";				
+			}
+		}
+
+		public function ambilDataUpdate($id)
+		{
+			include_once ('Model/tiketModel');
+			$tiket = new tiketModel();
+			$hasil = $tiket->edit();
+				while($hasil = mysql_fetch_array($sql)){
+		        $no_penerbangan=$hasil['no_penerbangan'];
+		        $kelas=$hasil['kelas'];
+		        $asal=$hasil['asal'];
+		        $tujuan=$hasil['tujuan'];
+		        $harga=$hasil['harga'];
+				}
+		}
 	}
 ?>

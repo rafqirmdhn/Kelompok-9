@@ -41,11 +41,9 @@
                                     <thead>
                                         <tr>
                                             <th>Kode Pembayaran</th>
-                                            <th>Rincian</th>
-                                            <th>Waktu Terbang</th>
                                             <th>Nama Pemesan</th>
-                                            <th>Tanggal Penerbangan</th>
-                                            <th>Tanggal Tiba</th>
+                                            <th>Telepon</th>
+                                            <th>Harga</th>
                                             <th>Status Pembayaran</th>
                                             <th>Keterangan</th>
                                         </tr>
