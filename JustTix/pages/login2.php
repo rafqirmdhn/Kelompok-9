@@ -21,9 +21,14 @@
 	<div class="loginbox">
 		<img src="../Gambar/icon-login2.png" class="avatar">
 		<h1>Log In</h1>
-		<form action='#' method='post'>
+		<form action='' method='post'>
+			<?php
+				include_once('Controller/loginController.php');
+				$login = new loginController();
+				$login->login();
+			?>
 			<p>Email</p>
-			<input type="text" name="email" placeholder="Email" required>
+			<input type="email" name="email" placeholder="Email" required>
 			<p>Password</p>
 			<input type="password" name="password" placeholder="Password" required>
 			<input type="submit" name="submit" value="Login">
@@ -32,11 +37,6 @@
 		</form>
 	</div>
 	<div>
-		<?php
-			include_once('Controller/loginController.php');
-			$login = new loginController();
-			$login->login();
-		?>
 	</div>
 </body>
 </html>

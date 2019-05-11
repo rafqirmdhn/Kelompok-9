@@ -40,5 +40,16 @@
 			$sql = "SELECT DISTINCT ".$data." FROM tiket";
 			return mysqli_query($this->con,$sql);
 		}
+		public function pembayaran($data,$id,$username){
+			$sql1 = "SELECT id_customer FROM customer WHERE username='$username'";
+			$sql2 = "SELECT kode_maskapai FROM tiket WHERE kode_tiket='$id'";
+			$query1 = mysqli_query($this->con,$sql1);
+			$query2 = mysqli_query($this->con,$sql2);
+			$row1 = mysqli_fetch_assoc($query1);
+			$row2 = mysqli_fetch_assoc($query2);
+			$sql3 = "INSERT INTO customer_memesan_tiket VALUES ('".$row1['id_customer']."','$id',NULL,'".$row2['kode_maskapai']."','".$data['nama']."','".$data['ktp']."','".$data['telp']."')";
+			$query3 = mysqli_query($this->con,$sql3);
+			return $query1;
+		}
 	}
 ?>
