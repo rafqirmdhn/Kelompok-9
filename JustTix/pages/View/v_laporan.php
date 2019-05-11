@@ -1,6 +1,3 @@
-<?php 
-include_once('v_headM.php');
-include_once('v_headerM.php');?>
 <div class="row" style="height: 70px">
 	<b>Laporan Rekap Penjualan</b>
 </div>
@@ -28,7 +25,7 @@ include_once('v_headerM.php');?>
 				</thead>
 			<tbody>
 				<?php
-				include_once('../Controller/maskapaiController.php');
+				include_once('Controller/maskapaiController.php');
 				$data = new maskapaiController();
 				$data->showRekap();
 				?>

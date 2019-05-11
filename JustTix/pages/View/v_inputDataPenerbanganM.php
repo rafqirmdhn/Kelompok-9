@@ -1,6 +1,4 @@
-<?php 
-include_once('v_headM.php');
-include_once('v_headerM.php');?>
+
 <br>
 <br>
 <br>
@@ -9,7 +7,7 @@ include_once('v_headerM.php');?>
 </div>
 <br>
 <div>
-	<form class="form-horizontal" action="v_inputPenerbanganBerhasilM.php" method="post">
+	<form class="form-horizontal" action="maskapaiInputBerhasil.php" method="post">
 	  <div class="form-group">
 	    <label class="control-label col-sm-1" for="kode_pesawat">Kode Pesawat:</label>
 	    <div class="col-sm-10">
@@ -35,6 +33,7 @@ include_once('v_headerM.php');?>
 	    </div>
 	  </div>
 	</form>
+	
 	<div>
 	</div>
 </div>
