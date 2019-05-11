@@ -1,5 +1,5 @@
 <?php
-include_once('../Model/maskapaiModel.php');
+
 class maskapaiController{
 	public function index(){
 
@@ -8,8 +8,29 @@ class maskapaiController{
 		include ('View/v_homeMaskapai.php');
 		
 	}
+	public function viewRekap(){
+
+		include ('View/v_headM.php');
+		include ('View/v_headerM.php');
+		include ('View/v_laporan.php');
+		
+	}
+	public function viewInput(){
+
+		include ('View/v_headM.php');
+		include ('View/v_headerM.php');
+		include ('View/v_inputDataPenerbanganM.php');
+		
+	}
+	public function viewInputBerhasil(){
+
+		include ('View/v_headM.php');
+		include ('View/v_headerM.php');
+		include ('View/v_inputPenerbanganBerhasilM.php');
+		
+	}
 	public function showRekap(){
-		include_once('../Model/maskapaiModel.php');
+		include_once('Model/maskapaiModel.php');
 		$tiket = new maskapaiModel();
 		$result = $tiket->selectTabelRekap();
 			while($row = mysqli_fetch_assoc($result)) {
@@ -28,6 +49,7 @@ class maskapaiController{
 			}
 	}
 	public function inputPesawat(){
+		include_once('Model/maskapaiModel.php');
 		if(isset($_POST["submit"])){
 			$data = array(
 				'kode_pesawat' => $_POST['kode_pesawat'],

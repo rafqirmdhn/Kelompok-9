@@ -27,7 +27,8 @@
 			$last_name = $data["last_name"];
 			$telp = $data["telp"];
 			$alamat = $data["alamat"];
-			$sql = "INSERT INTO customer VALUES (null,'$username','$password','$first_name','$last_name','$email','L','$telp','$alamat')";
+			$gender = $data["gender"];
+			$sql = "INSERT INTO customer VALUES (null,'$username','$password','$first_name','$last_name','$email','$gender','$telp','$alamat')";
 			$query = mysqli_query($this->con,$sql);
 			return $query;
 		}

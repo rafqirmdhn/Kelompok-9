@@ -104,7 +104,7 @@
 							?>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="Registrasi2.php"><i class="fa fa-user fa-fw"></i> Registrasi</a>
+                            <li><a href="Registrasi2.php"><i class="fa fa-user fa-fw"></i> Sign Up</a>
                             </li>
 							<?php
 								if($username!=""){
@@ -114,11 +114,6 @@
 								else{
 									echo '<li><a href="login2.php"><i class="fa fa-sign-in fa-fw"></i> Login</a>
 											</li>';
-								}
-								if(isset($_POST['submit'])){
-									include_once('Controller/loginController.php');
-									$login = new loginController();
-									#$login->logout();
 								}
 							?>
                         </ul>

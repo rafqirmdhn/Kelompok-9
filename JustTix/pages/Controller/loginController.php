@@ -42,15 +42,15 @@
 							header("Location:templateUser.php");
 						}
 						else{
-							header("Location:login2.php");
+							echo '<p> Email/Password salah </p>';
 						}
 					}
 					else{
-						header("Location:login2.php");
+						echo '<p> Email/Password salah </p>';
 					}
 				}
 				if(!isset($_SESSION)){
-					header("Location:login2.php");
+					echo '<p> Email/Password salah </p>';
 				}
 			}
 		}
@@ -70,8 +70,8 @@
 					header("location:Registrasi2.php");
 				}
 				else{
-					if(mysqli_num_rows($cekEmail)>0 && mysqli_num_rows($cekUsername)>0){
-						header("location:registrasiGagal.php");
+					if(mysqli_num_rows($cekEmail)>0 || mysqli_num_rows($cekUsername)>0){
+						echo '<p> Email/Username sudah dipakai </p>';
 					}
 					else{
 						session_start();
@@ -94,6 +94,7 @@
 					'last_name' => $_POST["last-name"],
 					'telp' => $_POST["notelp"],
 					'alamat' => $_POST["alamat"],
+					'gender' => $_POST["gender"],
 				);
 				$login = new loginModel();
 				$query = $login->signup($dataDaftar);

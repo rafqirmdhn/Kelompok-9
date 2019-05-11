@@ -34,8 +34,8 @@
                                     <br>
                                 <label for="start">Tanggal Penerbangan : </label><br>
                                     <input type="date" class="form-control" id="form-300" name="tanggal"
-                                        value="2019-02-02"
-                                        min="2019-02-02" max="2019-12-31"><br>                
+                                        value="2019-05-01"
+                                        min="2019-05-01" max="2019-12-31"><br>                
                                 <div class="kelas-penerbangan">
                                     <label >Kelas Penerbangan : </label>
                                         <select class="form-control" placeholder="Enter text" id="form-300" name ="kelas">

@@ -21,50 +21,50 @@
                                         </div>
                                 </div>
                                 <div style="margin-top: 50px">
-                                        <p style="margin-left: 250px" style="font-size: 5000px">Halaman Data Diri</p>
+                                        <p style="margin-left: 250px" style="font-size: 5000px">SILAHKAN ISI DATA DIRI ANDA</p>
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form role="form" action="Pembayaran.php" method="post">
+                                            <form role="form" method="post" action="#">
                                                 <div class="form-group">
                                                     <label>Nama</label>
-                                                    <input class="form-control" name = "nama_pemesan" placeholder="Masukan Nama Customer ">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Tanggal Lahir</label>
-                                                    <input class="form-control" name = "tanggal_lahir" placeholder="Masukan Tanggal Lahir Customer">
-                                                </div>
-                                                
+                                                    <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+                                                </div>                                                
                                                 <div class="form-group">
                                                     <label>Nomor Telpon</label>
-                                                    <input class="form-control" name = "nomor_telpon" placeholder="Masukan Nomor Telpon Customer">
+                                                    <input type="number" name="telp" class="form-control" placeholder="Nomor Telpon" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nomor KTP</label>
-                                                    <input class="form-control" nama = "nomor_identitas" placeholder="Masukan Nomor Identitas Customer">
+                                                    <input type="number" name="ktp" class="form-control" placeholder="Nomor KTP" required>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" nama = "email" placeholder="Masukan Email Customer">
-                                                </div>
-                                                <div class="form-group">
+												<fieldset>
+                                                    <div class="form-group">
                                                     
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input type="checkbox">Pengisian sesuai data diri
+                                                            <input type="checkbox" required>Pengisian sesuai data diri
                                                         </label>
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
-                                                
-                                            
-                                                
-                                                </div>
-                                                
-                                               
-                                            </form>
+                                                    <button type="submit" name="submit" class="btn btn-primary">Konfirmasi</button>
+                                                </fieldset>
+											</form>
                                         </div>
                                         <!-- /.col-lg-6 (nested) -->
-                                        
+                                        <div class="col-lg-6">
+                                        <?php
+											include_once("Controller/tiketController.php");
+											$tiket = new tiketController();
+											if($tiket->pembayaran($_GET['id'],$username)==True){
+												echo "berhasil";
+											}
+											else{
+												echo "gagal";
+											}
+										?>
+                                            
+                                            </form>
+                                        </div>
                                         <!-- /.col-lg-6 (nested) -->
                                     </div>
                                     <!-- /.row (nested) -->

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<title>
-		Sign In
+		Sign Up
 	</title>
 	<!-- Login CSS -->
 	<link href="../css/login2.css" rel="stylesheet">
@@ -15,8 +15,13 @@
 <body>
 	<div class="loginbox">
 		<img src="../Gambar/icon-login2.png" class="avatar">
-		<h1>Sign In</h1>
+		<h1>Sign Up</h1>
 		<form action="#" method='post'>
+			<?php
+				include_once('Controller/loginController.php');
+				$login = new loginController();
+				$login->registrasiLanjut();
+			?>
 			<p>Email</p>
 			<input type="email" name="email" placeholder="Email" required>
 			<p>Password</p>
@@ -30,11 +35,6 @@
 		</form>
 	</div>
 	<div>
-		<?php
-			include_once('Controller/loginController.php');
-			$login = new loginController();
-			$login->registrasiLanjut();
-		?>
 	</div>
 </body>
 </html>
