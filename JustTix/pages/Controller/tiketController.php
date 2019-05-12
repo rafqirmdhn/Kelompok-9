@@ -103,17 +103,19 @@
 			}
 		}
 
-		public function ambilDataUpdate($id)
+		public function ubahTiket()
 		{
 			include_once ('Model/tiketModel');
 			$tiket = new tiketModel();
 			$hasil = $tiket->edit();
-				while($hasil = mysql_fetch_array($sql)){
-		        $no_penerbangan=$hasil['no_penerbangan'];
-		        $kelas=$hasil['kelas'];
-		        $asal=$hasil['asal'];
-		        $tujuan=$hasil['tujuan'];
-		        $harga=$hasil['harga'];
+				if ( $this->model('tiketModel')->edit($_POST > 0)){
+					Flasher::setFlash('berhasil','diubah','success');
+					header('Location: localhost/JustTix/pages/tabelUpdate.php');
+					exit;
+				}else{
+					Flasher::setFlash('gagal','diubah','danger');
+					header('Location: localhost/JustTix/pages/tabelUpdate.php');
+					exit;
 				}
 		}
 	}

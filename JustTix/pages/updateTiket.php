@@ -181,41 +181,36 @@
                                     </div>
                                     <div style="margin-top: 50px">
                                         <p style="text-align: center;" style="font-size: 20px">Form Update Tiket</p>
-                                            <form method = 'post' action= "tabelUpdate.php">
-                                                <?php 
-                                                    include_once('Controller/tiketController.php');
-                                                    $hasil = new tiketController();
-                                                    $hasil->ambilDataUpdate($hasil);
-                                                ?>
+                                            <form method = 'post'>
                                               <table>
                                                 <tr>
                                                 <td style="padding-right: 200px; width: 100px; padding-bottom: 20px;"><?php echo $no_penerbangan;?></td>
                                                 <td>:</td>
-                                                <td><input type='text' name='NomorPenerbangan'></td>
+                                                <td><input type='text' name='NomorPenerbangan' id="noper"></td>
                                                <tr>
                                                 <tr>
                                                 <td style="padding-right: 200px; width: 100px; padding-bottom: 20px;"><?php echo $kelas;?></td>
                                                 <td>:</td>
-                                                <td><input type='text' name='Kelas'></td>
+                                                <td><input type='text' name='Kelas' id="kelas"></td>
                                                <tr>
                                                 <tr>
                                                 <td style="padding-right: 200px; width: 100px; padding-bottom: 20px;"><?php echo $asal;?></td>
                                                 <td>:</td>
-                                                <td><input type='text' name='Asal'></td>
+                                                <td><input type='text' name='Asal' id="asal"></td>
                                                <tr>
                                                 <tr>
                                                 <td style="padding-right: 200px; width: 100px; padding-bottom: 20px;"><?php echo $tujuan;?></td>
                                                 <td>:</td>
-                                                <td><input type='text' name='Tujuan'></td>
+                                                <td><input type='text' name='Tujuan' id="tujuan"></td>
                                                <tr>
                                                 <tr>
                                                 <td style="padding-right: 200px; width: 100px; padding-bottom: 20px;"><?php echo $harga;?></td>
                                                 <td>:</td>
-                                                <td><input type='text' name='Harga'></td>
+                                                <td><input type='text' name='Harga' id="harga"></td>
                                                <tr>
                                                 <td></td>
                                                 <td></td>
-                                                <td><input type='submit' value='Update Tiket'></td>
+                                                <td><input type='submit' value='Update Tiket'><a href="tabelUpdate.php"></td>
                                                </tr>
                                               </table>  
                                              </form>

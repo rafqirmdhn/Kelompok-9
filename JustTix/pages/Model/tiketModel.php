@@ -1,4 +1,4 @@
-<?php
+ <?php
 	include_once('Controller/connect.php');
 	class tiketModel extends connect{
 		private $con;
@@ -68,6 +68,31 @@
 			$sql3 = "INSERT INTO customer_memesan_tiket VALUES ('".$row1['id_customer']."','$id',NULL,'".$row2['kode_maskapai']."','".$data['nama']."','".$data['ktp']."','".$data['telp']."')";
 			$query3 = mysqli_query($this->con,$sql3);
 			return $query1;
+		}
+
+		public function edit($data)
+		{
+			$query = "UPDATE tiket set
+					no_penerbangan = no_penerbangan,
+					kelas = kelas,
+					asal = asal,
+					tujuan = tujuan,
+					harga = harga 
+					where kode_tiket=kode_tiket";
+
+			$this->db->query($query);
+			$this->db->bind('no_penerbangan',$data['no_penerbangan']);
+			$this->db->bind('kelas',$data['kelas']);
+			$this->db->bind('asal',$data['asal']);
+			$this->db->bind('tujuan',$data['tujuan']);
+			$this->db->bind('harga',$data['harga']);
+			$this->db->bind('kode_tiket',$data['kode_tiket']);
+
+			$this->db->execute();
+
+			return $this->db->rowCount();
+
+
 		}
 
 	}
