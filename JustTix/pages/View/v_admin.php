@@ -1,21 +1,9 @@
-<body>
-<div id="wrapper">
 
-
-
-    <!-- Page Content -->
-    <div class="background-colorground" id="page-wrapper" style="margin-left: 0px">
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header" id="border-bottom"><br></h1>
-                </div>
-            </div>					
-					
-					
-					
-						<div class="judul" style="margin-top: 200px">
+<div class="row jumbotron" style="background: url('../Gambar/pesawat.png'); background-size: cover; height: 250px" >
+	<h2 style="z-index: 0 ;position: absolute; text-align: right;left: 600px;top: 100px;color: white; font-size: 50px">JustTix</h2>
+</div>
+<div>
+	<div class="judul">
 							<p class="judul-font"><b>Kenapa memilih JustTix?</b></p>
 						</div>
 					<div class="padding-left-600 margin-top-20">
@@ -75,30 +63,8 @@
 							
 						
 						</div>
-						
-						
-						
-						
-					</div>
-
-            <!-- ... Your content goes here ... -->
-
-        </div>
-    </div>
-
 </div>
-
-<!-- jQuery -->
-<script src="../js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="../js/metisMenu.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="../js/startmin.js"></script>
-
-</body>
+        
+</div>
+    </body>
 </html>

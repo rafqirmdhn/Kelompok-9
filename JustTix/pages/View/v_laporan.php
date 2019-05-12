@@ -18,16 +18,13 @@
 							<th>Asal</th>
 							<th>Tujuan</th>
 							<th>Harga</th>
-							<th>Tanggal Terbang</th>
-							<th>Tanggal Tiba</th>
-							<th>Durasi (menit)</th>
 						</tr>
 				</thead>
 			<tbody>
 				<?php
-				include_once('Controller/maskapaiController.php');
-				$data = new maskapaiController();
-				$data->showRekap();
+					include_once('Controller/maskapaiController.php');
+					$data = new maskapaiController();
+					$data->showRekap();
 				?>
 			</tbody>
 		</table>

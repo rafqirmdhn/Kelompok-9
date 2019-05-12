@@ -19,6 +19,13 @@
 			$query = mysqli_query($this->con,$sql);
 			return $query;
 		}
+		public function loginKaryawan($data){
+			$email = $data["email"];
+			$password = $data["password"];
+			$sql = "SELECT * FROM karyawan WHERE email='$email'";
+			$query = mysqli_query($this->con,$sql);
+			return $query;
+		}
 		public function signup($data){
 			$email = $data["email"];
 			$password = $data["password"];
@@ -46,6 +53,11 @@
 			$sql = "SELECT * FROM ".$data1." WHERE email='$data2'";
 			$isLogin = mysqli_query($this->con,$sql);
 			return $isLogin;
+		}
+		public function cekLogin($data1, $data2){
+			$sql = "SELECT email FROM $data1 WHERE email='$data2'";
+			$cekLogin = mysqli_query($this->con,$sql);
+			return $cekLogin;
 		}
 	}
 ?>

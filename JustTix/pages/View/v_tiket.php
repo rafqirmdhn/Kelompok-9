@@ -23,7 +23,7 @@
                                         <?php 
                                             include_once('Controller/tiketController.php');
                                             $dataTiket = new tiketController();
-                                            $dataTiket->tampilDataTiket($username);
+                                            $dataTiket->tampilDataTiket();
                                         ?>
                                     </div>
                                     <!-- /.table-responsive -->

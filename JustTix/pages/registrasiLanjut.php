@@ -36,9 +36,12 @@
 	<div>
 		<?php
 			session_start();
+			$email = $_SESSION['email'];
+			$pass = $_SESSION['password'];
+			$username = $_SESSION['username'];
 			include_once('Controller/loginController.php');
 			$login = new loginController();
-			$login->signup($_SESSION['email'],$_SESSION['password'],$_SESSION['username']);
+			$login->signup($email,$pass,$username);
 		?>
 	</div>
 </body>

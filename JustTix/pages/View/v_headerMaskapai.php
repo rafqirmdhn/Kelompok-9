@@ -1,6 +1,20 @@
+<?php
+	include_once("Controller/loginController.php");
+	session_start();
+	if(isset($_SESSION)){
+		$email = $_SESSION['email'];
+		$username = $_SESSION['username'];
+	}
+	else{
+		$username = "";
+	}
+	$login = new loginController();
+	$login->cekLoginMaskapai($email);
+?>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="template-user.php">JustTix</a>
+                    <a class="navbar-brand" href="templateUser.php">JustTix</a>
                 </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,13 +25,14 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="search-tiket.php"><i class="fa fa-fw"></i>Tiket</a></li>
+                    <li><a href="maskapaiLihatRekap.php">Lihat Laporan</a></li>
                 </ul>
-
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="pembayaranP.php"><i class="fa fa-fw"></i>Pembayaran</a></li>
+                    <li><a href="maskapaiInputDataPesawat.php">Input Data Penerbangan </a></li>
                 </ul>
-
+				<ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="logout.php">Log Out </a></li>
+                </ul>
                 
 
 
@@ -94,13 +109,29 @@
                 <ul class="nav navbar-right navbar-top-links">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> <b class="caret"></b>
+							<?php
+								if($username!=""){
+									echo '<i class="fa fa-user fa-fw"></i>'.$username.' <b class="caret"></b>';
+								}
+								else{
+									echo '<i class="fa fa-user fa-fw"></i>'.$username.' <b class="caret"></b>';
+								}
+							?>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="Registrasi2.php"><i class="fa fa-user fa-fw"></i> Registrasi</a>
                             </li>
-                            <li><a href="login2.php"><i class="fa fa-sign-in fa-fw"></i> Login</a>
-                            </li>
+							<li><a href="logout.php" name="submit"><i class="fa fa-sign-in fa-fw"></i> Logout</a>
+							</li>
+							<?php
+								if($username!=""){
+									echo '<li><a href="logout.php" name="submit"><i class="fa fa-sign-in fa-fw"></i> Logout</a>
+											</li>';
+								}
+								else{
+									echo '<li><a href="login2.php"><i class="fa fa-sign-in fa-fw"></i> Login</a>
+											</li>';
+								}
+							?>
                         </ul>
                     </li>
                 </ul>

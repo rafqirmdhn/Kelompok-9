@@ -1,5 +1,6 @@
 <?php
 	include_once("Controller/loginController.php");
+	session_start();
 	if(isset($_SESSION)){
 		$email = $_SESSION['email'];
 		$username = $_SESSION['username'];
@@ -8,7 +9,7 @@
 		$username = "";
 	}
 	$login = new loginController();
-	$login->cekLoginCustomer($email);
+	$login->cekLoginAdmin($email);
 ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -24,14 +25,16 @@
                 </button>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="templateUser.php"><i class="fa fa-fw"></i>Beranda</a></li>
+                    <li><a href="adminLihatRekap.php"><i class="fa fa-fw"></i>Lihat Laporan</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-left navbar-top-links">
-                    <li><a href="Pembayaran.php"><i class="fa fa-fw"></i>Pembayaran</a></li>
+                    <li><a href="updateTiket.php"><i class="fa fa-fw"></i>Update Tiket</a></li>
                 </ul>
 
-                
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="logout.php"><i class="fa fa-fw"></i>Log Out</a></li>
+                </ul>
 
 
             

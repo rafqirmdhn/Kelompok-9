@@ -1,5 +1,5 @@
 <?php
-	include_once("Controller/maskapaiController.php");
-	$maskapai = new maskapaiController();
+	include_once("Controller/pageController.php");
+	$maskapai = new pageController();
 	$maskapai->viewRekap();
 ?>

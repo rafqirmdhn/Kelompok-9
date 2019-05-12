@@ -15,15 +15,15 @@
 					$db_password = $row["pass_admin"];
 					$db_username = $row["user_admin"];
 
-					if($email == $db_email && $password == $db_password){
+					if($dataLogin["email"] == $db_email && $dataLogin["password"] == $db_password){
 						session_start();
 						$_SESSION["email"] = $db_email;
 						$_SESSION["username"] = $db_username;
 						$_SESSION["password"] = $db_password;
-						header("Location:templateAdmin.php");
+						header("Location:admin.php");
 					}
 					else{
-						header("Location:login2.php");
+						echo '<p> Email/Password salah </p>';
 					}
 				}
 				else{
@@ -46,7 +46,24 @@
 						}
 					}
 					else{
-						echo '<p> Email/Password salah </p>';
+						$query3 = $login->loginKaryawan($dataLogin);
+						if(mysqli_num_rows($query3)>0){
+							$row = mysqli_fetch_array($query3);
+							$db_email = $row["email"];
+							$db_password = $row["pass_karyawan"];
+							$db_username = $row["user_karyawan"];
+
+							if($dataLogin['email'] == $db_email && $dataLogin['password'] == $db_password){
+								session_start();
+								$_SESSION["email"] = $db_email;
+								$_SESSION["password"] = $db_password;
+								$_SESSION["username"] = $db_username;
+								header("Location:maskapai.php");
+							}
+						}
+						else{
+							echo '<p> Email/Password salah </p>';
+						}
 					}
 				}
 				if(!isset($_SESSION)){
@@ -115,44 +132,91 @@
 				$login = new loginModel();
 				$query = $login->isLogin('admin',$_SESSION["email"]);
 				if(mysqli_num_rows($query)>0){
-					header("Location:templateAdmin.php");
+					header("Location:admin.php");
 				}
 				else{
 					$query = $login->isLogin('customer',$_SESSION["email"]);
 					if(mysqli_num_rows($query)>0){
 						header("Location:templateUser.php");
 					}
+					else{
+						$query = $login->isLogin('karyawan',$_SESSION["email"]);
+						if(mysqli_num_rows($query)>0){
+							header("Location:maskapai.php");
+						}
+					}
 				}
 			}
 		}
 		
-		public function cekLogin($emailMasuk){
+		public function cekLoginCustomer($email){
 			if(!isset($_SESSION)){
 				session_start();
 			}
-			#if(isset($_SESSION["email"])){
-			if(isset($emailMasuk)){
-				$login = new loginModel();
-				$query = $login->isLogin('customer',$emailMasuk);
+			$login = new loginModel();
+			$query = $login->isLogin('admin',$email);
+			if(mysqli_num_rows($query)>0){
+				header('Location:admin.php');
+				exit;
+			}
+			else{
+				$query = $login->isLogin('karyawan',$email);
 				if(mysqli_num_rows($query)>0){
-					header("Location:templateUser.php");
+					header('Location:maskapai.php');
+					exit;
 				}
-				/*
-				else{
-					$query = $login->isLogin('customer',$_SESSION['email']);
-					if(mysqli_num_rows($query)>0){
-						header('Location:templateUser.php');
-					}
+			}
+		}
+		public function cekLoginAdmin($email){
+			if(!isset($_SESSION)){
+				session_start();
+			}
+			$login = new loginModel();
+			$query = $login->isLogin('customer',$email);
+			if(mysqli_num_rows($query)>0){
+				header("Location:templateUser.php");
+				exit;
+			}
+			else{
+				$query = $login->isLogin('karyawan',$email);
+				if(mysqli_num_rows($query)>0){
+					header('Location:maskapai.php');
+					exit;
 				}
-				*/
+			}
+			if($_SESSION==NULL){
+				session_destroy();
+				header('Location:templateUser.php');
+				exit;
+			}
+		}
+		public function cekLoginMaskapai($email){
+			if(!isset($_SESSION)){
+				session_start();
+			}
+			$login = new loginModel();
+			$query = $login->isLogin('customer',$email);
+			if(mysqli_num_rows($query)>0){
+				header("Location:templateUser.php");
+				exit;
+			}
+			else{
+				$query = $login->isLogin('admin',$email);
+				if(mysqli_num_rows($query)>0){
+					header('Location:admin.php');
+					exit;
+				}
+			}
+			if($_SESSION==NULL){
+				session_destroy();
+				header('Location:templateUser.php');
+				exit;
 			}
 		}
 		
 		public function logout(){
 			session_start();
-			#$_SESSION['username'] = "";
 			session_destroy();
-			#echo 'berhasil'.$_SESSION['username'];
 			header("Location:templateUser.php");
 			
 		}

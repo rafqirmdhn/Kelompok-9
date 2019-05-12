@@ -22,7 +22,7 @@
 				echo '<i class="fa fa-exclamation-circle fa-2x" style = "color: red"></i> <br> Data sudah ada' ;
 				
 			}else{
-				$sql = "INSERT INTO pesawat VALUES('".$data['kode_pesawat']."','".$data['nama_pesawat']."','".$data['jenis_pesawat']."')";
+				$sql = "INSERT INTO pesawat VALUES(NULL,'".$data['nama_pesawat']."','".$data['jenis_pesawat']."')";
 				$result = mysqli_query($this->con,$sql);
 				echo '<i class="fa fa-check-circle fa-2x" style = "color: green"></i> <br> Anda telah berhasil memasukkan data Penerbangan' ;
 				return $result;
