@@ -30,7 +30,7 @@
 			<input type="text" name="alamat" placeholder="Alamat" required>
 			<p>Nomor Telepon</p>
 			<input type="text" name="notelp" placeholder="Nomor Telepon" required>
-			<input type="submit" name="submit" value="Sign In">
+			<input type="submit" name="submit" value="Sign Up">
 		</form>
 	</div>
 	<div>

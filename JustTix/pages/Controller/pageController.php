@@ -17,6 +17,12 @@
 			include("View/v_headerUser.php");
 			include("View/v_DataDiri.php");
 		}
+		public function dataDiriBerhasil(){
+			session_start();
+			include("View/v_head.php");
+			include("View/v_headerUser.php");
+			include("View/v_dataDiriBerhasil.php");
+		}
 		public function tiket(){
 			session_start();
 			include('View/v_head.php');

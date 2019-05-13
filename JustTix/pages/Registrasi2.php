@@ -30,7 +30,7 @@
 			<input type="password" name="repass" placeholder="Re-Password" required>
 			<p>Username</p>
 			<input type="text" name="username" placeholder="Username" required>
-			<input type="submit" name="submit" value="Sign In">
+			<input type="submit" name="submit" value="Sign Up">
 			<a href="login2.php">Already have an account?</a>
 		</form>
 	</div>

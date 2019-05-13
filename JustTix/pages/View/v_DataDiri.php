@@ -25,8 +25,10 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form role="form" method="post" action="#">
-                                                <div class="form-group">
+											<?php
+											echo"<form role='form' method='post' action='dataDiriBerhasil.php?id=".$_GET['id']."'>";
+                                            ?>
+												<div class="form-group">
                                                     <label>Nama</label>
                                                     <input type="text" name="nama" class="form-control" placeholder="Nama" required>
                                                 </div>                                                
@@ -52,17 +54,6 @@
                                         </div>
                                         <!-- /.col-lg-6 (nested) -->
                                         <div class="col-lg-6">
-                                        <?php
-											include_once("Controller/tiketController.php");
-											$tiket = new tiketController();
-											if($tiket->pembayaran($_GET['id'],$username)==True){
-												echo "berhasil";
-											}
-											else{
-												echo "gagal";
-											}
-										?>
-                                            
                                             </form>
                                         </div>
                                         <!-- /.col-lg-6 (nested) -->

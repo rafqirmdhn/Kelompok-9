@@ -47,7 +47,7 @@
 			$query2 = mysqli_query($this->con,$sql2);
 			$row1 = mysqli_fetch_assoc($query1);
 			$row2 = mysqli_fetch_assoc($query2);
-			$sql3 = "INSERT INTO customer_memesan_tiket VALUES ('".$row1['id_customer']."','$id',NULL,'".$row2['kode_maskapai']."','".$data['nama']."','".$data['ktp']."','".$data['telp']."')";
+			$sql3 = "INSERT INTO customer_memesan_tiket VALUES ('".$row1['id_customer']."','$id',NULL,'".$row2['kode_maskapai']."','".$data['nama']."','".$data['ktp']."','".$data['telp']."','belum')";
 			$query3 = mysqli_query($this->con,$sql3);
 			return $query1;
 		}

@@ -73,14 +73,7 @@
 				);
 				include_once("Model/tiketModel.php");
 				$pembayaran = new tiketModel();
-				$query = $pembayaran->pembayaran($dataDiri,$id,$username);
-				if($query){
-					return True;
-					//header("Location:templateUser.php");
-				}
-				else{
-					return False;
-				}
+				$pembayaran->pembayaran($dataDiri,$id,$username);
 			}
 		}
 		public function tampilDataBayar($username){
