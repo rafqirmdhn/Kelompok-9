@@ -108,11 +108,11 @@
 						else{
 							echo"<td width='75' style='background-color:#ff1616'>Belum</td>";
 						}
-						echo"</tr>
-                        </thead>
+						echo"</tr>";
+			}
+            echo        "</thead>
                     </table>
                 </div>";
-			}
 			}
 		}
 		public function ubahTiket(){
