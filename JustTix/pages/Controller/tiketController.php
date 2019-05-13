@@ -97,7 +97,7 @@
                             </tr>";
 			while($row = mysqli_fetch_assoc($query)){
                         echo"<tr>
-                                <td width='150'>Rp ".$row['harga']."</td>
+                                <td width='150'>Rp ".number_format($row['harga'])."</td>
                                 <td>".$row['nama_pemesan']."</td>
                                 <td>".$row['tgl_berangkat']."</td>
                                 <td>".$row['tgl_tiba']."</td>";
