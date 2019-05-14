@@ -57,7 +57,7 @@
 			return $query;
 		}
 		public function tampilTabelUpdate(){
-			$sql = "SELECT kode_tiket, no_penerbangan, kelas, asal, tujuan, tgl_terbang, tgl_tiba, harga FROM tiket";
+			$sql = "SELECT kode_tiket, no_penerbangan, kelas, asal, tujuan, harga FROM tiket";
 			$result = mysqli_query($this->con,$sql);
 			return $result;
 		}

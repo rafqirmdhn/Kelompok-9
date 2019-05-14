@@ -145,8 +145,6 @@
                                                     <th>Kelas</th>
                                                     <th>Asal</th>
                                                     <th>Tujuan</th>
-                                                    <th>Jam Terbang</th>
-                                                    <th>Jam Tiba</th>
                                                     <th>Harga</th>
                                                     <th>Keterangan</th>
                                                 </tr>
