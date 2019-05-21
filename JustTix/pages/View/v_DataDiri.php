@@ -26,8 +26,9 @@
                                     <div class="row">
                                         <div class="col-lg-6">
 											<?php
-											echo"<form role='form' method='post' action='dataDiriBerhasil.php?id=".$_GET['id']."'>";
+											//echo"<form role='form' method='post' action='dataDiriBerhasil.php?id=".$_GET['id']."'>";
                                             ?>
+                                            <form role='form' method='post' action='#'>
 												<div class="form-group">
                                                     <label>Nama</label>
                                                     <input type="text" name="nama" class="form-control" placeholder="Nama" required>
@@ -52,6 +53,14 @@
                                                 </fieldset>
 											</form>
                                         </div>
+                                            <?php
+                                                include_once("Controller/tiketController.php");
+                                                $tiket = new tiketController();
+                                                $query = $tiket->pembayaran($_GET['id'],$username);
+                                                if($query){
+                                                   header('Location:v_dataDiriBerhasil.php'); 
+                                                }
+                                            ?>
                                         <!-- /.col-lg-6 (nested) -->
                                         <div class="col-lg-6">
                                             </form>

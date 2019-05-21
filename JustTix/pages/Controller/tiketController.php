@@ -71,9 +71,14 @@
 					'telp' => $_POST['telp'],
 					'ktp' => $_POST['ktp']
 				);
+				if(strlen($dataDiri['ktp'])!=16){
+					echo 'nomor ktp harus 16 digit';
+				}else{
 				include_once("Model/tiketModel.php");
 				$pembayaran = new tiketModel();
 				$pembayaran->pembayaran($dataDiri,$id,$username);
+				return true;
+			}
 			}
 		}
 		public function tampilDataBayar($username){

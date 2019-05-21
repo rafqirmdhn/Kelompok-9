@@ -80,22 +80,31 @@
 					'repass' => $_POST['repass'],
 					'username' => $_POST['username']
 				);
-				$login = new loginModel();
-				$cekEmail = $login->cekEmail($dataSignIn['email']);
-				$cekUsername = $login->cekUsername($dataSignIn['username']);
-				if($dataSignIn['password'] != $dataSignIn['repass']){
-					header("location:Registrasi2.php");
+				if(!filter_var($dataSignIn['email'],FILTER_VALIDATE_EMAIL)){
+					echo '<p> format email salah </p>';
+				}
+				else if (preg_match('/[^A-Za-z0-9]/i', $dataSignIn['username'])==true){
+				//if(!ctype_alnum($dataSignIn['username'])){
+					echo '<p> Username tidak boleh ada simbol </p>';
 				}
 				else{
-					if(mysqli_num_rows($cekEmail)>0 || mysqli_num_rows($cekUsername)>0){
-						echo '<p> Email/Username sudah dipakai </p>';
+					$login = new loginModel();
+					$cekEmail = $login->cekEmail($dataSignIn['email']);
+					$cekUsername = $login->cekUsername($dataSignIn['username']);
+					if($dataSignIn['password'] != $dataSignIn['repass']){
+						header("location:Registrasi2.php");
 					}
 					else{
-						session_start();
-						$_SESSION['email'] = $dataSignIn['email'];
-						$_SESSION['password'] = $dataSignIn['password'];
-						$_SESSION['username'] = $dataSignIn['username'];
-						header("location:registrasiLanjut.php");
+						if(mysqli_num_rows($cekEmail)>0 || mysqli_num_rows($cekUsername)>0){
+							echo '<p> Email/Username sudah dipakai </p>';
+						}
+						else{
+							session_start();
+							$_SESSION['email'] = $dataSignIn['email'];
+							$_SESSION['password'] = $dataSignIn['password'];
+							$_SESSION['username'] = $dataSignIn['username'];
+							header("location:registrasiLanjut.php");
+						}
 					}
 				}
 			}
@@ -113,14 +122,25 @@
 					'alamat' => $_POST["alamat"],
 					'gender' => $_POST["gender"],
 				);
-				$login = new loginModel();
-				$query = $login->signup($dataDaftar);
-				if($query){
-					session_destroy();
-					session_start();
-					$_SESSION["username"]=$dataDaftar['username'];
-					$_SESSION["user_type"]='customer';
-					header("Location:templateUser.php");
+				if(strpos($dataDaftar['first_name'],' ')==true || strpos($dataDaftar['last_name'],' ')==true){
+					echo '<p>First name/Last name hanya boleh 1 kata</p>';
+				}
+				else if(!ctype_alpha($dataDaftar['first_name']) || !ctype_alpha($dataDaftar['last_name'])){
+					echo '<p>First name/Last name hanya diisi huruf';
+				}
+				else if(!ctype_digit($dataDaftar['first_name'])){
+					echo'<p> No telepon harus angka </p>';
+				}
+				else{
+					$login = new loginModel();
+					$query = $login->signup($dataDaftar);
+					if($query){
+						session_destroy();
+						session_start();
+						$_SESSION["username"]=$dataDaftar['username'];
+						$_SESSION["user_type"]='customer';
+						header("Location:templateUser.php");
+					}
 				}
 			}
 		}

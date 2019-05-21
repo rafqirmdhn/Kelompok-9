@@ -17,6 +17,15 @@
 		<img src="../Gambar/icon-login2.png" class="avatar">
 		<h1>Sign Up (Continue)</h1>
 		<form action="#" method='post'>
+			<?php
+				session_start();
+				$email = $_SESSION['email'];
+				$pass = $_SESSION['password'];
+				$username = $_SESSION['username'];
+				include_once('Controller/loginController.php');
+				$login = new loginController();
+				$login->signup($email,$pass,$username);
+			?>
 			<p>First Name</p>
 			<input type="text" name="first-name" placeholder="First Name" required>
 			<p>Last Name</p>
@@ -34,15 +43,6 @@
 		</form>
 	</div>
 	<div>
-		<?php
-			session_start();
-			$email = $_SESSION['email'];
-			$pass = $_SESSION['password'];
-			$username = $_SESSION['username'];
-			include_once('Controller/loginController.php');
-			$login = new loginController();
-			$login->signup($email,$pass,$username);
-		?>
 	</div>
 </body>
 </html>
